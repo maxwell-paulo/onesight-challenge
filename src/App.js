@@ -1,7 +1,14 @@
 import "./index.css";
+import { Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/Navbar/Navbar.js";
 
 function App() {
-  return <h1>App</h1>;
+  return (
+    <div>
+      <Navbar />
+      <Routes></Routes>
+    </div>
+  );
 }
 
 export default App;
