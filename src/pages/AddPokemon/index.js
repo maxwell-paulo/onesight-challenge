@@ -21,14 +21,12 @@ export function AddPokemon() {
 
   function handleTypeChange(e) {
     setTypes({ ...types, [e.target.name]: e.target.value });
-    console.log(types);
   }
 
   function handleAddType(e) {
     e.preventDefault();
 
     setForm({ ...form, types: [...form.types, types] });
-    console.log(form);
   }
 
   function handleTypeDelete(tipo) {
@@ -40,27 +38,18 @@ export function AddPokemon() {
 
   function handleFormChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log(form);
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await addDoc(pokemonCollectionRef, form);
+      await addDoc(pokemonCollectionRef, form);
 
       navigate("/");
-
-      console.log(response);
     } catch (err) {
       console.log(err);
     }
   }
-
-  // const createUser = async () => {
-  //   await addDoc(pokemonCollectionRef, { ...form });
-
-  //   navigate("/");
-  // };
 
   return (
     <div>
@@ -134,7 +123,6 @@ export function AddPokemon() {
           </button>
           <div>
             {form.types.map((current) => {
-              console.log(`current.type ${current.type}`);
               return (
                 <div>
                   <p>{current.type}</p>
