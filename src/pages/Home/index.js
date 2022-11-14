@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { db } from "../../firebase-config.js";
 import { collection, getDocs } from "firebase/firestore";
-import { Link } from "react-router-dom";
 import { PokemonCard } from "../../components/PokemonCard/PokemonCard.js";
 
 export function Home() {
@@ -22,20 +21,24 @@ export function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="flex ">
       {pokemons.map((currentPokemon) => {
         return (
-          <>
+          <div>
             <PokemonCard
               poke_name={currentPokemon.poke_name}
               poke_img={currentPokemon.poke_img}
               number={currentPokemon.number}
               id={currentPokemon.id}
               type={currentPokemon.types.map((currentType) => {
-                return currentType.type;
+                return (
+                  <div className=" bg-white py-1 px-2 rounded-md border border-gray-400 shadow-md shadow-white ">
+                    <p>{currentType.type}</p>
+                  </div>
+                );
               })}
             />
-          </>
+          </div>
         );
       })}
     </div>
