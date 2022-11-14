@@ -35,7 +35,7 @@ export function PokemonPage() {
   }
 
   return (
-    <div className="bg-gray-100 mt-8 h-5/6 w-5/6 m-auto border-sky-600 border-8 rounded-md">
+    <div className="bg-grayrgba mt-8 h-5/6 w-5/6 m-auto border-sky-600 border-8 rounded-md">
       {pokemons.map((currentPokemon) => {
         if (currentPokemon.id === id) {
           return (

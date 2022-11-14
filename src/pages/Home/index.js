@@ -21,7 +21,7 @@ export function Home() {
   }, []);
 
   return (
-    <div className="flex justify-center bg-gray-100 mt-8 w-5/6 m-auto border-sky-600 border-8 rounded-md p-8 flex-wrap">
+    <div className="flex justify-center bg-grayrgba mt-8 w-5/6 m-auto border-sky-600 border-8 rounded-md p-8 flex-wrap">
       {pokemons.map((currentPokemon) => {
         return (
           <div>
