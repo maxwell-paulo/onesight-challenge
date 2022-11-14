@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar.js";
 import { AddPokemon } from "./pages/AddPokemon";
 import { Home } from "./pages/Home";
+import { PokemonPage } from "./pages/PokemonPage";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/addpokemon" element={<AddPokemon />} />
+        <Route path="/add-pokemon" element={<AddPokemon />} />
+        <Route path="/pokemon/:id" element={<PokemonPage />} />
       </Routes>
     </div>
   );

@@ -13,6 +13,7 @@ export function AddPokemon() {
     number: 0,
     types: [],
     poke_img: "",
+    about: "",
   });
 
   const [types, setTypes] = useState({
@@ -87,6 +88,18 @@ export function AddPokemon() {
             placeholder="http://www.exemplo.com/img.png"
             required
           />
+
+          <label htmlFor="sobre">Escreva sobre o Pokémon</label>
+          <input
+            id="sobre"
+            name="about"
+            value={form.about}
+            type="text"
+            onChange={handleFormChange}
+            placeholder="Sobre:"
+            required
+          />
+
           <label htmlFor="tipos">Tipos: </label>
           <select
             id="tipos"
