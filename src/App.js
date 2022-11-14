@@ -5,10 +5,12 @@ import { AddPokemon } from "./pages/AddPokemon";
 import { Home } from "./pages/Home";
 import { PokemonPage } from "./pages/PokemonPage";
 import { EditPokemon } from "./pages/EditPokemon";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div>
+      <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
