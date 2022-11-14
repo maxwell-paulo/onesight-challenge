@@ -21,7 +21,7 @@ export function Home() {
   }, []);
 
   return (
-    <div className="flex ">
+    <div className="flex bg-gray-100 mt-8 w-5/6 m-auto border-sky-600 border-8 rounded-md p-8">
       {pokemons.map((currentPokemon) => {
         return (
           <div>
