@@ -23,7 +23,7 @@ export function Home() {
   }, []);
 
   return (
-    <div className="flex justify-center bg-grayrgba my-8 w-5/6 m-auto border-sky-600 border-8 rounded-md p-8 flex-wrap">
+    <div className="flex justify-center bg-grayrgba mt-36 mb-8 w-5/6 m-auto border-sky-600 border-8 rounded-md p-8 flex-wrap">
       <Link to={"/add-pokemon"}>
         <img src={addBtn} alt="Add button" className="w-80 " />
       </Link>
