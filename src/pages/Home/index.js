@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { db } from "../../firebase-config.js";
 import { collection, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import { PokemonCard } from "../../components/PokemonCard/PokemonCard.js";
 
 export function Home() {
   const [pokemons, setPokemons] = useState([]);
@@ -24,19 +25,17 @@ export function Home() {
     <div>
       {pokemons.map((currentPokemon) => {
         return (
-          <div>
-            <h1>{currentPokemon.poke_name}</h1>
-            <img src={currentPokemon.poke_img} alt="Pokemon" />
-            <p>#{currentPokemon.number}</p>
-            <ul>
-              {currentPokemon.types.map((currentType) => {
-                return <li>{currentType.type}</li>;
+          <>
+            <PokemonCard
+              poke_name={currentPokemon.poke_name}
+              poke_img={currentPokemon.poke_img}
+              number={currentPokemon.number}
+              id={currentPokemon.id}
+              type={currentPokemon.types.map((currentType) => {
+                return currentType.type;
               })}
-            </ul>
-            <Link to={`/pokemon/${currentPokemon.id}`}>
-              <button type="button">Saber mais</button>
-            </Link>
-          </div>
+            />
+          </>
         );
       })}
     </div>
