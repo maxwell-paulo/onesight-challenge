@@ -7,3 +7,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  background-image: url("../src/images/2b3b04771ccca26c3dd96d781b0117ca.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

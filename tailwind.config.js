@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         roboto: ["Roboto Condensed", "sans-serif"],
       },
+      colors: {
+        grayrgba: "rgba(248, 248, 248, 0.904)",
+      },
     },
   },
   plugins: [],

@@ -76,7 +76,7 @@ export function EditPokemon() {
   }
 
   return (
-    <div className="bg-gray-100 mt-8 w-5/6 m-auto border-sky-600 border-8 rounded-md p-8">
+    <div className="bg-grayrgba  mt-8 w-5/6 m-auto border-sky-600 border-8 rounded-md p-8">
       <h1 className="flex justify-center items-center mb-10 font-roboto font-black text-sky-700 text-5xl">
         Editar Pokémon
       </h1>
