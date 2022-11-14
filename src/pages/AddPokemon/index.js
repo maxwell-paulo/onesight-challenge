@@ -155,25 +155,26 @@ export function AddPokemon() {
                 <option hidden defaultValue>
                   Selecione
                 </option>
+
                 <option disabled>Tipos</option>
-                <option value="Normal">Normal</option>
-                <option value="Fogo">Fogo</option>
                 <option value="Água">Água</option>
-                <option value="Grama">Grama</option>
-                <option value="Voador">Voador</option>
-                <option value="Lutador">Lutador</option>
-                <option value="Veneno">Veneno</option>
+                <option value="Dragão">Dragão</option>
                 <option value="Elétrico">Elétrico</option>
-                <option value="Terra">Terra</option>
-                <option value="Pedra">Pedra</option>
-                <option value="Psíquico">Psíquico</option>
-                <option value="Gelo">Gelo</option>
-                <option value="Inseto">Inseto</option>
+                <option value="Fada">Fada</option>
                 <option value="Fantasma">Fantasma</option>
                 <option value="Ferro">Ferro</option>
-                <option value="Dragão">Dragão</option>
+                <option value="Fogo">Fogo</option>
+                <option value="Gelo">Gelo</option>
+                <option value="Grama">Grama</option>
+                <option value="Inseto">Inseto</option>
+                <option value="Lutador">Lutador</option>
+                <option value="Normal">Normal</option>
+                <option value="Pedra">Pedra</option>
+                <option value="Psíquico">Psíquico</option>
                 <option value="Sombrio">Sombrio</option>
-                <option value="Fada">Fada</option>
+                <option value="Terra">Terra</option>
+                <option value="Veneno">Veneno</option>
+                <option value="Voador">Voador</option>
               </select>
               <button
                 type="button"
@@ -184,7 +185,7 @@ export function AddPokemon() {
                 Adicionar
               </button>
             </div>
-            <div className="flex flex-col justify-center items-center bg-white w-80 py-6 gap-5">
+            <div className="flex flex-col justify-center items-center bg-white w-52 py-6 gap-5">
               {form.types.map((current) => {
                 return (
                   <div>
