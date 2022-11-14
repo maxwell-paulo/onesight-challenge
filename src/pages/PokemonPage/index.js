@@ -50,7 +50,7 @@ export function PokemonPage() {
               </ul>
               <p>{currentPokemon.about}</p>
 
-              <Link to={`/edit/${currentPokemon.id}`}>
+              <Link to={`/edit-pokemon/${currentPokemon.id}`}>
                 <button type="button">Editar Pokémon</button>
               </Link>
 
