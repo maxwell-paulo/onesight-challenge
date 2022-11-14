@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { db } from "../../firebase-config.js";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export function PokemonPage() {
   const navigate = useNavigate();
@@ -22,11 +23,36 @@ export function PokemonPage() {
     fetchPokemon();
   }, []);
 
-  async function handleDelete() {
+  function handleToast() {
+    toast((t) => (
+      <span className=" font-roboto text-sky-700 text-md font-black text-center mb-5">
+        Tem certeza que deseja <b>excluir</b> esse Pokémon?
+        <div className="flex justify-center items-center gap-14 mt-3">
+          <button
+            className="w-24 font-Roboto text-white bg-red-900 py-3 px-4 rounded-md    transform transition hover:bg-red-500"
+            onClick={() => {
+              handleDelete(t);
+            }}
+          >
+            Excluir
+          </button>
+          <button
+            className="w-24 font-Roboto text-white bg-blue-500 py-3 px-4 rounded-md    transform transition hover:bg-green-500"
+            onClick={() => toast.dismiss(t.id)}
+          >
+            Não
+          </button>
+        </div>
+      </span>
+    ));
+  }
+
+  async function handleDelete(t) {
     const pokemonDoc = doc(db, "pokemons", id);
     try {
       await deleteDoc(pokemonDoc);
 
+      toast.dismiss(t.id);
       navigate("/");
     } catch (erro) {
       console.log(erro);
@@ -88,7 +114,7 @@ export function PokemonPage() {
                 </Link>
 
                 <button
-                  onClick={handleDelete}
+                  onClick={handleToast}
                   className="w-40 font-Roboto text-white bg-gray-600 py-3 px-4 rounded-md  hover:-translate-y-0.5  transform transition hover:bg-red-500"
                 >
                   Deletar Pokémon
