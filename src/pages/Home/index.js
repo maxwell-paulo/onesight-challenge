@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
 import { db } from "../../firebase-config.js";
 import { collection, getDocs } from "firebase/firestore";
-import { PokemonCard } from "../../components/PokemonCard/PokemonCard.js";
+import { Link } from "react-router-dom";
 
 export function Home() {
   const [pokemons, setPokemons] = useState([]);
   const pokemonCollectionRef = collection(db, "pokemons");
 
   useEffect(() => {
-    const fetchPokemon = async () => {
-      const data = await getDocs(pokemonCollectionRef);
+    async function fetchPokemon() {
+      try {
+        const data = await getDocs(pokemonCollectionRef);
 
-      setPokemons(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-
+        setPokemons(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      } catch (erro) {
+        console.log(erro);
+      }
+    }
     fetchPokemon();
   }, []);
 
@@ -30,6 +33,9 @@ export function Home() {
                 return <li>{currentType.type}</li>;
               })}
             </ul>
+            <Link to={`/pokemon/${currentPokemon.id}`}>
+              <button type="button">Saber mais</button>
+            </Link>
           </div>
         );
       })}
