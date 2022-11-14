@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { db } from "../../firebase-config.js";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { async } from "@firebase/util";
 
 export function PokemonPage() {
   const navigate = useNavigate();

@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { db } from "../../firebase-config.js";
 import { collection, getDocs } from "firebase/firestore";
 import { PokemonCard } from "../../components/PokemonCard/PokemonCard.js";
+import addBtn from "../../images/Add-Button.png";
+import { Link } from "react-router-dom";
 
 export function Home() {
   const [pokemons, setPokemons] = useState([]);
@@ -21,7 +23,11 @@ export function Home() {
   }, []);
 
   return (
-    <div className="flex justify-center bg-grayrgba mt-8 w-5/6 m-auto border-sky-600 border-8 rounded-md p-8 flex-wrap">
+    <div className="flex justify-center bg-grayrgba my-8 w-5/6 m-auto border-sky-600 border-8 rounded-md p-8 flex-wrap">
+      <Link to={"/add-pokemon"}>
+        <img src={addBtn} alt="Add button" className="w-80 " />
+      </Link>
+
       {pokemons.map((currentPokemon) => {
         return (
           <div>

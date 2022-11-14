@@ -36,7 +36,7 @@ export function PokemonCard(props) {
       <Link to={`/pokemon/${id}`}>
         <button
           type="button"
-          className="w-32 font-Roboto text-white bg-gray-600 py-3 px-4 rounded-md  hover:-translate-y-0.5  transform transition hover:bg-blue-500"
+          className="w-32 font-Roboto text-white bg-gray-600 py-3 px-4 rounded-md  hover:-translate-y-0.5  transform transition hover:bg-blue-500 mb-8"
         >
           Saber mais
         </button>
